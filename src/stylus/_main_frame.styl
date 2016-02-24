@@ -1,0 +1,49 @@
+*::selection
+  background: #333
+  color: white
+
+html, body
+  height: 100%
+  width: 100%
+  text-align: center
+  color: #333
+  font-family: 'Lato', 'Helvetica Neue', helvetica, sans-serif
+
+body
+  background: url('/assets/images/square_bg.png') repeat
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    background: url('/assets/images/square_bg_@2X.png') repeat
+
+h1
+  padding-top: 96px
+  padding-bottom: 12px
+  font-size: 48px
+  font-variant: small-caps
+
+sub
+  font-size: 18px
+
+
+h2
+  padding-top: 96px
+  font-size: 24px
+
+footer
+  bottom: 24px
+  width: 100%
+  text-align: center
+  line-height: 32px
+  font-size: 16px
+
+  a
+    text-transform: uppercase
+    text-decoration: none
+    font-style: italic
+    color: #333
+
+    &:hover,
+    &:visited,
+    &:active
+      text-decoration: none
+      color: #333

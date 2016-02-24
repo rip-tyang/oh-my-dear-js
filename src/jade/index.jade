@@ -1,0 +1,16 @@
+include template/_mixins.jade
+extends template/_default.jade
+
+block append css
+  +ex_css('http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext')
+  
+block append hjs
+  +ex_js('//d3js.org/d3.v3.min.js')
+  +jsF('main.js')
+block contents
+  h1 Oh My Dear JavaScript
+  sub Bizarre behaviors in JavaScript
+  h2 Relational and Equality Operators
+  svg#rAndEOp
+  footer &copy; 2016 
+    a(href='http://www.thomas-yang.me') Thomas Yang
