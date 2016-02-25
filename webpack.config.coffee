@@ -1,5 +1,6 @@
 webpack = require 'webpack'
 path = require 'path'
+s = require 'stylus'
 nib = require 'nib'
 banner = 'Copyright 2015 Thomas Yang http://thomas-yang.me/'
 
@@ -36,11 +37,16 @@ module.exports =
       {
         test: /\.(eot|ttf|woff)$/
         loader: 'url?limit=100000'
+      },
+      {
+        test: /\.(jpeg|jpg|png)$/
+        loaders: ['file?name=[name].[ext]']
       }
     ],
 
   stylus:
     use: [nib()]
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.BannerPlugin(banner)

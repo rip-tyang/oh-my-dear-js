@@ -52,11 +52,11 @@ class BinaryOp
   ]
 
   constructor: (svgId, option = {}) ->
-    @size = 20 || option.size
-    @gap = 2 || option.gap
+    @size = option.size || 20
+    @gap = option.gap || 2
     @width = (@gap + @size)*strArr.length - @gap
     @height = (@gap + @size)*strArr.length - @gap
-    @padding = 120 || option.size
+    @padding = option.padding || 120
     @res
 
     @svg = d3.select "##{svgId}"

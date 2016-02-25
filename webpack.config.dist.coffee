@@ -1,6 +1,7 @@
 webpack = require 'webpack'
 path = require 'path'
 nib = require 'nib'
+stylus = require 'stylus'
 ManifestPlugin = require 'webpack-manifest-plugin'
 banner = 'Copyright 2015 Thomas Yang http://thomas-yang.me/'
 
