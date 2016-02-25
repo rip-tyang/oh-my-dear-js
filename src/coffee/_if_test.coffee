@@ -64,8 +64,8 @@ class IfTest
     @var = strArr.map (e) -> eval(e)
     for v in @var
       if v then @ifRes.push 0 else @ifRes.push 3
-      if `v == true` then @trueRes.push 2 else @trueRes.push 3
-      if `v == false` then @falseRes.push 1 else @falseRes.push 3
+      if `v == true` then @trueRes.push 1 else @trueRes.push 3
+      if `v == false` then @falseRes.push 2 else @falseRes.push 3
 
   draw: =>
     str = strArr
@@ -84,11 +84,11 @@ class IfTest
       .attr 'height', 2*@size
       .style 'fill', (d) -> c[d]
 
-    ifRect = @svg.selectAll 'rect.false'
-      .data @falseRes
+    ifRect = @svg.selectAll 'rect.true'
+      .data @trueRes
       .enter()
       .append 'rect'
-      .attr 'class', 'false'
+      .attr 'class', 'true'
       .attr 'y', 2*@size + @gap
       .attr 'x', (d, i) =>
         i%len*@size + i%len*@gap
@@ -96,8 +96,8 @@ class IfTest
       .attr 'height', 2*@size
       .style 'fill', (d) -> c[d]
 
-    ifRect = @svg.selectAll 'rect.true'
-      .data @trueRes
+    ifRect = @svg.selectAll 'rect.false'
+      .data @falseRes
       .enter()
       .append 'rect'
       .attr 'class', 'false'
