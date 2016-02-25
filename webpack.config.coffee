@@ -1,6 +1,6 @@
 webpack = require 'webpack'
 path = require 'path'
-s = require 'stylus'
+stylus = require 'stylus'
 nib = require 'nib'
 banner = 'Copyright 2015 Thomas Yang http://thomas-yang.me/'
 
@@ -32,20 +32,20 @@ module.exports =
       },
       {
         test: /\.styl$/
-        loader: 'style-loader!css-loader!stylus-loader'
+        loader: 'style-loader!css-loader!stylus-loader?resolve url'
       },
       {
         test: /\.(eot|ttf|woff)$/
         loader: 'url?limit=100000'
-      },
-      {
-        test: /\.(jpeg|jpg|png)$/
-        loaders: ['file?name=[name].[ext]']
       }
     ],
 
   stylus:
     use: [nib()]
+    define:
+      url: stylus.url
+        paths: [__dirname + '/src']
+        limit: false
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
