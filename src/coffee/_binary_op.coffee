@@ -64,10 +64,11 @@ class BinaryOp
       .attr 'height', @height + 2*@padding
       .append 'g'
         .attr 'transform', 'translate(' + @padding + ',' + @padding + ')'
+
     @calc()
     @draw()
 
-  calc: () =>
+  calc: =>
     @res = []
     @var1 = strArr.map (e) -> eval(e)
     @var2 = strArr.map (e) -> eval(e)
